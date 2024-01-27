@@ -115,32 +115,70 @@
 <div id="result">0</div>
 
 <div class="calculator-row">
-  <button class="calculator-button" onclick="appendNumber('7')">7</button>
-  <button class="calculator-button" onclick="appendNumber('8')">8</button>
-  <button class="calculator-button" onclick="appendNumber('9')">9</button>
+  <button class="calculator-button" onclick="memoryClear()">MC</button>
+  <button class="calculator-button" onclick="memoryRecall()">MR</button>
+  <button class="calculator-button" onclick="memoryAdd()">M+</button>
+  <button class="calculator-button" onclick="memorySubtract()">M-</button>
+  <button class="calculator-button" onclick="memoryStore()">MS</button>
+  <button class="calculator-button" onclick="blankButton()">Blank</button>
+</div>
+
+<div class="calculator-row">
+  <button class="calculator-button" onclick="blankButton()">Blank</button>
+  <button class="calculator-button" onclick="appendNumber('Math.PI')">π</button>
+  <button class="calculator-button" onclick="appendNumber('Math.E')">e</button>
+  <button class="calculator-button" onclick="clearResult()">C</button>
+  <button class="calculator-button" onclick="deleteLastCharacter()">DEL</button>
+</div>
+
+<div class="calculator-row">
+  <button class="calculator-button" onclick="squared()">x²</button>
+  <button class="calculator-button" onclick="inverse()">1/X</button>
+  <button class="calculator-button" onclick="absolute()">|x|</button>
+  <button class="calculator-button" onclick="exponential()">exp</button>
+  <button class="calculator-button" onclick="setOperator('%')">mod</button>
+</div>
+
+<div class="calculator-row">
+  <button class="calculator-button" onclick="squareRoot()">√</button>
+  <button class="calculator-button" onclick="appendNumber('(')">(</button>
+  <button class="calculator-button" onclick="appendNumber(')')">)</button>
+  <button class="calculator-button" onclick="factorial()">n!</button>
   <button class="calculator-button" onclick="setOperator('/')">/</button>
 </div>
 
 <div class="calculator-row">
-  <button class="calculator-button" onclick="appendNumber('4')">4</button>
-  <button class="calculator-button" onclick="appendNumber('5')">5</button>
-  <button class="calculator-button" onclick="appendNumber('6')">6</button>
-  <button class="calculator-button" onclick="setOperator('*')">*</button>
+  <button class="calculator-button" onclick="power()">X^Y</button>
+  <button class="calculator-button" onclick="appendNumber('7')">7</button>
+  <button class="calculator-button" onclick="appendNumber('8')">8</button>
+  <button class="calculator-button" onclick="appendNumber('9')">9</button>
+  <button class="calculator-button" onclick="setOperator('X')">*</button>
 </div>
 
 <div class="calculator-row">
-  <button class="calculator-button" onclick="appendNumber('1')">1</button>
-  <button class="calculator-button" onclick="appendNumber('2')">2</button>
-  <button class="calculator-button" onclick="appendNumber('3')">3</button>
+  <button class="calculator-button" onclick="powerOfTen()">10^X</button>
+  <button class="calculator-button" onclick="appendNumber('4')">4</button>
+  <button class="calculator-button" onclick="appendNumber('5')">5</button>
+  <button class="calculator-button" onclick="appendNumber('6')">6</button>
   <button class="calculator-button" onclick="setOperator('-')">-</button>
 </div>
 
 <div class="calculator-row">
-  <button class="calculator-button" onclick="appendNumber('0')">0</button>
-  <button class="calculator-button" onclick="clearResult()">C</button>
-  <button class="calculator-button" onclick="calculateResult()">=</button>
+  <button class="calculator-button" onclick="logBaseTen()">log</button>
+  <button class="calculator-button" onclick="appendNumber('1')">1</button>
+  <button class="calculator-button" onclick="appendNumber('2')">2</button>
+  <button class="calculator-button" onclick="appendNumber('3')">3</button>
   <button class="calculator-button" onclick="setOperator('+')">+</button>
 </div>
+
+<div class="calculator-row">
+  <button class="calculator-button" onclick="naturalLog()">ln</button>
+  <button class="calculator-button" onclick="plusMinus()">+/-</button>
+  <button class="calculator-button" onclick="appendNumber('0')">0</button>
+  <button class="calculator-button" onclick="appendDecimal()">.</button>
+  <button class="calculator-button" onclick="calculateResult()">=</button>
+</div>
+
 </div>
 
 </body>

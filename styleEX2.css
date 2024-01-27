@@ -1,0 +1,51 @@
+/* Resetting default styles for the body element */
+body {
+    font-family: Arial, sans-serif; /* Setting the font family for the entire document */
+    margin: 0; /* Removing default margin */
+    padding: 0; /* Removing default padding */
+    display: flex; /* Using flexbox for layout */
+    justify-content: center; /* Centering content horizontally */
+    align-items: center; /* Centering content vertically */
+    height: 100vh; /* Making the body take up 100% of the viewport height */
+    background-color: #4f5250; /* Setting the background color 4f5250 */
+}
+
+/* Styling for the calculator container */
+#calculator {
+    background-color: #87c8b5; /* Setting the background color for the calculator */
+    border-radius: 8px; /* Adding rounded corners to the calculator */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a subtle box shadow for depth */
+    overflow: hidden; /* Hiding any content that exceeds the calculator's boundaries */
+    width: 700px; /* Setting the width of the calculator */
+}
+
+/* Styling for rows inside the calculator */
+.calculator-row {
+    display: flex; /* Using flexbox for row layout */
+}
+
+/* Styling for calculator buttons */
+.calculator-button {
+    flex: 1; /* Each button takes up equal space within its row */
+    padding: 20px; /* Setting padding for each button */
+    text-align: center; /* Centering text within each button */
+    font-size: 18px; /* Setting the font size for buttons */
+    cursor: pointer; /* Changing cursor to pointer on hover to indicate interactivity */
+    border: 1px solid #dde4e3; /* Adding a thin border between buttons */
+    outline: none; /* Removing default button outline */
+    background-color: #fdfdfd; /* Setting the default background color for buttons */
+    transition: background-color 0.3s; /* Adding a smooth transition for background color changes */
+}
+
+/* Styling for button hover effect */
+.calculator-button:hover {
+    background-color: #1f4d37; /* Changing background color on hover */
+}
+
+/* Styling for the result display area */
+#result {
+    padding: 20px; /* Setting padding for the result display area */
+    text-align: right; /* Aligning text to the right within the result area */
+    font-size: 24px; /* Setting the font size for the result text */
+    border-bottom: 1px solid #f8f8f8; /* Adding a subtle border at the bottom of the result area */
+}
