@@ -4,182 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTW App Template</title>
-    <!--
-        The tailwind CDN is designed for development purposes only, and is not the best choice for production.
-        Read more here: https://tailwindcss.com/docs/installation 
-    -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- example for dark theme styling when using tailwind cdn -->
-    <style>
-        /*examples for dark/light themes*/
-        .dark .dark\:text-white {
-            color: #fff;
-        }
-        .dark .dark\:bg-gray-800 {
-            background-color: #1f2937;
-        }
-        .light .light\:text-black {
-            color: #000;
-        }
-
-        /*add your custom css rules here*/
-    </style>
+    <title>scientific calculator</title>
+    <link rel="stylesheet" href="styleEX2.css">
 </head>
 
-<body class="dark:text-white light:text-black">
-
-    <!-- your app code goes here -->
-
-    <!-- special scripts for integration in App Gallery - must be placed at the bottom of the HTML after your code -->
-    <script>
-        // custom config for the MTW app 
-        const mtwAppConfig = {
-            border: true // app border in the MTW page                    
-        }
-
-        ///////////////////////////////////////////////////////
-        // implement this functions in order to use private API        
-        const sendPrivateApiRequest = async () => {
-            // your code here:
-            // sendRequestToParent({ cat: 'getAssets' })
-        }        
-
-        const acceptPrivateApiResponse = async (data) => {
-            // process received data here:
-            // console.log(data)
-        }
-
-        // use this in order to send on document load
-        document.addEventListener('DOMContentLoaded', () => {
-            // your code here:
-            //sendRequestToParent({ method: 'getAssets' })
-        })
-
-    </script>
-    <script src="https://morethanwallet.com/appstore/index.js"></script>
-</body>
-
-<title>Calculator</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #4f5250;
-  }
-
-  #calculator {
-    background-color: #72dfba;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 300px;
-  }
-
-  .calculator-row {
-    display: flex;
-  }
-
-  .calculator-button {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background-color: #fdfdfd;
-    transition: background-color 0.3s;
-  }
-
-  .calculator-button:hover {
-    background-color: #1f4d37;
-  }
-
-  #result {
-    padding: 20px;
-    text-align: right;
-    font-size: 24px;
-    border-bottom: 1px solid #f8f8f8;
-  }
-</style>
-</head>
 <body>
 
-<div id="calculator">
-<div id="result">0</div>
+    <div id="calculator">
+        <div id="result"></div>
 
-<div class="calculator-row">
-  <button class="calculator-button" onclick="memoryClear()">MC</button>
-  <button class="calculator-button" onclick="memoryRecall()">MR</button>
-  <button class="calculator-button" onclick="memoryAdd()">M+</button>
-  <button class="calculator-button" onclick="memorySubtract()">M-</button>
-  <button class="calculator-button" onclick="memoryStore()">MS</button>
-  <button class="calculator-button" onclick="blankButton()">Blank</button>
-</div>
 
-<div class="calculator-row">
-  <button class="calculator-button" onclick="blankButton()">Blank</button>
-  <button class="calculator-button" onclick="appendNumber('Math.PI')">π</button>
-  <button class="calculator-button" onclick="appendNumber('Math.E')">e</button>
-  <button class="calculator-button" onclick="clearResult()">C</button>
-  <button class="calculator-button" onclick="deleteLastCharacter()">DEL</button>
-</div>
+        <div class="calculator-row">
+            <button class="calculator-button" onclick="memoryClear()">MC</button>
+            <button class="calculator-button" onclick="memoryRecall()">MR</button>
+            <button class="calculator-button" onclick="memoryAdd()">M+</button>
+            <button class="calculator-button" onclick="memorySubtract()">M-</button>
+            <button class="calculator-button" onclick="blankButton()"> </button>
+          </div>
+          
+          <div class="calculator-row">
+            <button class="calculator-button" onclick="squared()">x²</button>
+            <button class="calculator-button" onclick="appendNumber('Math.PI')">π</button>
+            <button class="calculator-button" onclick="appendNumber('Math.E')">e</button>
+            <button class="calculator-button" onclick="clearResult()">C</button>
+            <button class="calculator-button" onclick="deleteLastCharacter()">DEL</button>
+          </div>
+          
+          <div class="calculator-row">
+            <button class="calculator-button" onclick="squareRoot()">√</button>
+            <button class="calculator-button" onclick="inverse()">1/X</button>
+            <button class="calculator-button" onclick="absolute()">|x|</button>
+            <button class="calculator-button" onclick="exponential()">exp</button>
+            <button class="calculator-button" onclick="calculatePercentage()">%</button>
+          </div>
+          
+          <div class="calculator-row">
+            <button class="calculator-button" onclick="power()">X^Y</button>
+            <button class="calculator-button" onclick="appendNumber('(')">(</button>
+            <button class="calculator-button" onclick="appendNumber(')')">)</button>
+            <button class="calculator-button" onclick="factorial()">n!</button>
+            <button class="calculator-button" onclick="setOperator('/')">/</button>
+          </div>
+          
+          <div class="calculator-row">
+            <button class="calculator-button" onclick="powerOfTen()">10^X</button>
+            <button class="calculator-button" onclick="appendNumber('7')">7</button>
+            <button class="calculator-button" onclick="appendNumber('8')">8</button>
+            <button class="calculator-button" onclick="appendNumber('9')">9</button>
+            <button class="calculator-button" onclick="setOperator('*')">X</button>
+          </div>
+          
+          <div class="calculator-row">
+            <button class="calculator-button" onclick="logBaseTwo()">log2</button>
+            <button class="calculator-button" onclick="appendNumber('4')">4</button>
+            <button class="calculator-button" onclick="appendNumber('5')">5</button>
+            <button class="calculator-button" onclick="appendNumber('6')">6</button>
+            <button class="calculator-button" onclick="setOperator('-')">-</button>
+          </div>
+          
+          <div class="calculator-row">
+            <button class="calculator-button" onclick="logBaseTen()">log10</button>
+            <button class="calculator-button" onclick="appendNumber('1')">1</button>
+            <button class="calculator-button" onclick="appendNumber('2')">2</button>
+            <button class="calculator-button" onclick="appendNumber('3')">3</button>
+            <button class="calculator-button" onclick="setOperator('+')">+</button>
+          </div>
+          
+          <div class="calculator-row">
+            <button class="calculator-button" onclick="naturalLog()">ln</button>
+            <button class="calculator-button" onclick="plusMinus()">+/-</button>
+            <button class="calculator-button" onclick="appendNumber('0')">0</button>
+            <button class="calculator-button" onclick="appendDecimal()">.</button>
+            <button class="calculator-button" onclick="calculateResult()">=</button>
+          </div>
 
-<div class="calculator-row">
-  <button class="calculator-button" onclick="squared()">x²</button>
-  <button class="calculator-button" onclick="inverse()">1/X</button>
-  <button class="calculator-button" onclick="absolute()">|x|</button>
-  <button class="calculator-button" onclick="exponential()">exp</button>
-  <button class="calculator-button" onclick="setOperator('%')">mod</button>
-</div>
+    </div>
 
-<div class="calculator-row">
-  <button class="calculator-button" onclick="squareRoot()">√</button>
-  <button class="calculator-button" onclick="appendNumber('(')">(</button>
-  <button class="calculator-button" onclick="appendNumber(')')">)</button>
-  <button class="calculator-button" onclick="factorial()">n!</button>
-  <button class="calculator-button" onclick="setOperator('/')">/</button>
-</div>
-
-<div class="calculator-row">
-  <button class="calculator-button" onclick="power()">X^Y</button>
-  <button class="calculator-button" onclick="appendNumber('7')">7</button>
-  <button class="calculator-button" onclick="appendNumber('8')">8</button>
-  <button class="calculator-button" onclick="appendNumber('9')">9</button>
-  <button class="calculator-button" onclick="setOperator('X')">*</button>
-</div>
-
-<div class="calculator-row">
-  <button class="calculator-button" onclick="powerOfTen()">10^X</button>
-  <button class="calculator-button" onclick="appendNumber('4')">4</button>
-  <button class="calculator-button" onclick="appendNumber('5')">5</button>
-  <button class="calculator-button" onclick="appendNumber('6')">6</button>
-  <button class="calculator-button" onclick="setOperator('-')">-</button>
-</div>
-
-<div class="calculator-row">
-  <button class="calculator-button" onclick="logBaseTen()">log</button>
-  <button class="calculator-button" onclick="appendNumber('1')">1</button>
-  <button class="calculator-button" onclick="appendNumber('2')">2</button>
-  <button class="calculator-button" onclick="appendNumber('3')">3</button>
-  <button class="calculator-button" onclick="setOperator('+')">+</button>
-</div>
-
-<div class="calculator-row">
-  <button class="calculator-button" onclick="naturalLog()">ln</button>
-  <button class="calculator-button" onclick="plusMinus()">+/-</button>
-  <button class="calculator-button" onclick="appendNumber('0')">0</button>
-  <button class="calculator-button" onclick="appendDecimal()">.</button>
-  <button class="calculator-button" onclick="calculateResult()">=</button>
-</div>
-
-</div>
+    <script src="scriptEX2.js"></script>
 
 </body>
 
